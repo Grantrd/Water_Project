@@ -4,8 +4,9 @@
 #include "SD.h"   //SD card (install from library manager)
 #include "LowPower.h" // low power consumption (cpp and h files included)
 
-int Sample_Number=6;   // everytime, take 6 samples.
-
+int Sample_Number=6;   // everytime you sample, take 6 samples.
+int minutes_to_wake = 15;  // number of minutes between samples
+int wake_counter = 0;
 //RTC Setup
 DS3231 rtc(SDA, SCL);
 //End of RTC setup
@@ -41,18 +42,18 @@ void setup(void)
   pinMode(chipSelect, OUTPUT);
   //pinMode(LEDR,OUTPUT);
   
-  Serial.begin(9600); //Serial port 9600 Baud rate
+//  Serial.begin(9600); //Serial port 9600 Baud rate
   rtc.begin(); //RTC begin
 //  setDateTime();  // Uncomment to reset the date and time of the RTC
-//  sensors.begin(); // Temp sensor
+  sensors.begin(); // Temp sensor
 
-  Serial.println("Starting SD card init");
+//  Serial.println("Starting SD card init");
   while (!SD.begin(chipSelect)) {
-    digitalWrite(LEDR, HIGH);
-    digitalWrite(LEDB, LOW);
-    Serial.println("Card failed, or not present");
+//    digitalWrite(LEDR, HIGH);
+//    digitalWrite(LEDB, LOW);
+//    Serial.println("Card failed, or not present");
   }
-  Serial.println("SD card initialized.");
+//  Serial.println("SD card initialized.");
   
   //  digitalWrite(LEDR, LOW);
   digitalWrite(LEDB, HIGH);
@@ -66,57 +67,70 @@ void setup(void)
     if (! SD.exists(filename)) {
       // only open a new file if it doesn't exist
       logfile = SD.open(filename, FILE_WRITE);
-      Serial.print("Log file created: ");
-      Serial.print(filename);
-      Serial.println("");
+//      Serial.print("Log file created: ");
+//      Serial.print(filename);
+//      Serial.println("");
       break;  // leave the loop!
     } else {
-      Serial.print("Log file already exists: ");
-      Serial.print(filename);
-      Serial.println("");
+//      Serial.print("Log file already exists: ");
+//      Serial.print(filename);
+//      Serial.println("");
     }
   }
-  Serial.println("Beginning Loop");
+//  Serial.println("Beginning Loop");
 }
 
 void loop()
 {
-  Serial.println("Inside loop");
-  String ts = generateTimestamp();
-
-  Serial.println("Logging to SD");
-  logfile = SD.open(filename, FILE_WRITE);
-  logfile.print(ts);
+ if (wake_counter < minutes_to_wake*60/8) {  // Sleep for: (60s/m * minutes_to_wake)/8s (LowPower max setting)
+    wake_counter += 1;
     
-  for(int j=0;j<Sample_Number;j++){
-    sensors.requestTemperatures();
-    Celcius = sensors.getTempCByIndex(0);
-    Fahrenheit = sensors.toFahrenheit(Celcius);
-    Light = analogRead(LightSensor);
-    Lux = RawToLux(Light);
-    
-    logfile.print(" Temp  ");
-    logfile.print(Fahrenheit);
-    logfile.print(" F  ");
-    logfile.print(" Lux ");
-    logfile.println(Lux);
-    
-    Serial.print(" Temp: ");
-    Serial.print(Fahrenheit);
-    Serial.print(" F; ");
-    Serial.print("Lux: ");
-    Serial.println(Lux);
+//    String ts = generateTimestamp();
+//    Serial.println("Sleeping: ");
+//    Serial.print(wake_counter);
+//    Serial.print(" of ");
+//    Serial.print(minutes_to_wake*60/8);
     delay(100);
-  }
-  logfile.close();
-  Serial.println("log file closed");
-
-    
+    LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);  //sleep in 8 seconds
+  } else {
+    wake_counter = 0;
+//    Serial.println("Sense time");
+    String ts = generateTimestamp();
   
-  Serial.println("Going to sleep");
-  delay(100);
-  // Sleep for 8 s with ADC module and BOD module off
-  LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);  //sleep in 8 seconds
+//    Serial.println("Logging to SD");
+    logfile = SD.open(filename, FILE_WRITE);
+    logfile.print(ts);
+      
+    for(int j=0;j<Sample_Number;j++){
+      sensors.requestTemperatures();
+      Celcius = sensors.getTempCByIndex(0);
+      Fahrenheit = sensors.toFahrenheit(Celcius);
+      Light = analogRead(LightSensor);
+      Lux = RawToLux(Light);
+      
+      logfile.print(" Temp  ");
+      logfile.print(Fahrenheit);
+      logfile.print(" F  ");
+      logfile.print(" Lux ");
+      logfile.println(Lux);
+      
+//      Serial.print(" Temp: ");
+//      Serial.print(Fahrenheit);
+//      Serial.print(" F; ");
+//      Serial.print("Lux: ");
+//      Serial.println(Lux);
+      delay(100);
+    }
+    logfile.close();
+//    Serial.println("log file closed");
+  
+      
+    
+//    Serial.println("Going to sleep");
+    delay(100);
+    // Sleep for 8 s with ADC module and BOD module off
+    LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);  //sleep in 8 seconds
+  }
 }
 
 float RawToLux(int raw)
@@ -128,7 +142,7 @@ float RawToLux(int raw)
 void setDateTime() {
   rtc.setDOW(WEDNESDAY);     // Set Day-of-Week 
   rtc.setTime(22, 14, 0);     // Set the time 
-  rtc.setDate(12, 11, 2019);   // Set the date
+  rtc.setDate(11, 12, 2019);   // Set the date (day, month, year)
 }
 
 String generateTimestamp() {
@@ -138,7 +152,7 @@ String generateTimestamp() {
   s += " -- ";
   s += rtc.getTimeStr();
   s += ":";
-  Serial.print("The time is: ");
-  Serial.print(s);
+//  Serial.print("The time is: ");
+//  Serial.print(s);
   return s;
 }
