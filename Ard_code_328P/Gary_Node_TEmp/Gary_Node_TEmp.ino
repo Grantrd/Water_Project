@@ -42,7 +42,7 @@ void setup(void)
   pinMode(chipSelect, OUTPUT);
   //pinMode(LEDR,OUTPUT);
   
-//  Serial.begin(9600); //Serial port 9600 Baud rate
+  Serial.begin(9600); //Serial port 9600 Baud rate
   rtc.begin(); //RTC begin
 //  setDateTime();  // Uncomment to reset the date and time of the RTC
   sensors.begin(); // Temp sensor
@@ -51,9 +51,9 @@ void setup(void)
   while (!SD.begin(chipSelect)) {
 //    digitalWrite(LEDR, HIGH);
 //    digitalWrite(LEDB, LOW);
-//    Serial.println("Card failed, or not present");
+    Serial.println("Card failed, or not present");
   }
-//  Serial.println("SD card initialized.");
+  Serial.println("SD card initialized.");
   
   //  digitalWrite(LEDR, LOW);
   digitalWrite(LEDB, HIGH);
