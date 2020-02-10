@@ -1,0 +1,115 @@
+{
+    "author": {
+        "email": "heggens@berea.edu",
+        "name": "Scott Heggen"
+    },
+    "description": {
+        "EN": "CAM job to produce the three files needed to run the mill\n"
+    },
+    "output_type": "directory",
+    "outputs": [
+        {
+            "format_specifier": {
+                "decimal": 3,
+                "integer": 3
+            },
+            "output_type": "drill",
+            "outputs": [
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "drills": {
+                        "NPTH": true,
+                        "PTH": true,
+                        "VIA": true
+                    },
+                    "filename_format": "%NAME_%N_Drills.xln",
+                    "layers": {
+                        "from": 1,
+                        "to": 16
+                    },
+                    "name": "a06_username_drills",
+                    "type": "excellon"
+                }
+            ]
+        },
+        {
+            "filename_prefix": "gerber",
+            "format_specifier": {
+                "decimal": 4,
+                "integer": 3
+            },
+            "generate_job_file": false,
+            "output_type": "gerber",
+            "outputs": [
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": true,
+                    "config": {
+                        "description": "Defines the outer dimension for cutting out the board",
+                        "file_function": "OtherDrawing"
+                    },
+                    "filename_format": "%NAME_%N_Dimension.gbr",
+                    "layers": [
+                        20
+                    ],
+                    "milling": false,
+                    "name": "a06_username_dim",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": false,
+                    "config": {
+                        "file_function": "Copper",
+                        "layer": 1,
+                        "layer_details": "mixed",
+                        "layer_type": "Bottom"
+                    },
+                    "filename_format": "%NAME_%N_Copper.gbr",
+                    "layers": [
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        22,
+                        24,
+                        26,
+                        40,
+                        42,
+                        45,
+                        52
+                    ],
+                    "milling": false,
+                    "name": "a06_username_copper",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                }
+            ],
+            "version": "X2"
+        }
+    ],
+    "timestamp": "2018-03-01T09:20:45",
+    "type": "EAGLE CAM job",
+    "units": "imperial",
+    "version": "8.6.0"
+}
