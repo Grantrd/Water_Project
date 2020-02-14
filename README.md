@@ -7,4 +7,4 @@ school project funded by Berea College.
 
 
 
-![Alt text](Documentation\Assembly.png raw=true)
+![Alt text](Documentation\Assembly.png)
