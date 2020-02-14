@@ -7,4 +7,4 @@ school project funded by Berea College.
 
 
 
-![Alt text](Documentation\Assembly.png)
+![Board Layout](https://github.com/Grantrd/Water_Project/blob/master/Documentation/Assembly.png "Board")
