@@ -6,3 +6,5 @@ written in arduino, and using schematics and PCB's made in eagle cad software, a
 school project funded by Berea College. 
 
 
+
+![Alt text](Documentation\Assembly.png raw=true)
