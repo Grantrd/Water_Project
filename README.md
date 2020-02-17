@@ -1,4 +1,4 @@
-# Water_Quality_Monitoring_Project
+# Water Quality Monitoring Project
 This project for Dr. Gary Mahoney and Dr. Wei Wu, a collaboration between Scott Heggen, Wei Wu and Rodney Grant. It is meant to allow for the measuring and recording of the quality of water in lakes. The project consists of code written in the Arduino ide, using many of its common libraries. It utulizes Eagle Autocad Software for making the schematics and boards, and _________ to mill the PCB's. This is a school project funded by Berea College.
 
 ## Specifications
