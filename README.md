@@ -27,7 +27,7 @@ Note if you already have the PCB, you can skip the milling section.
 
 ### Soldering the board 
 To solder the board you will need a soldering iron, solder, a milled PCB, and all of the required components listed above. 
-You will need to solder the components for the board according to their location on the color coded diagram below found below. 
+You will need to solder the components for the board according to their location on the color coded diagram found under Board Layout. 
 
 For the following components you will need to solder female ended molexes connectors to the board in place of the components, and solder male headed molex connectors to the ends of the components. They will then plug into each other.
 - Temperature Probe
@@ -41,5 +41,7 @@ For the following components you will need to solder the components themselves t
 - 2 Potentiometers
 
 For the Micro SD Writer you need to solder a 90 degree 6 pin female header terminal.
+
+### Board Layout
 ![Board Layout](https://github.com/Grantrd/Water_Project/blob/master/Images/Board_Layout.png "Board")
 
