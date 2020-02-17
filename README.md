@@ -1,5 +1,5 @@
 # Water_Quality_Monitoring_Project
-This project for Gary Mahoney and Dr. Wei Wu, a collaboration between Scott Heggen, Wei Wu and Rodney Grant. It is meant to allow for the measuring and recording of the quality of water in lakes. The project consists of code written in the Arduino ide, and uses schematics and PCB's made in eagle autocad software. This is a school project funded by Berea College.
+This project for Dr. Gary Mahoney and Dr. Wei Wu, a collaboration between Scott Heggen, Wei Wu and Rodney Grant. It is meant to allow for the measuring and recording of the quality of water in lakes. The project consists of code written in the Arduino ide, using many of its common libraries. It utulizes Eagle Autocad Software for making the schematics and boards, and _________ to mill the PCB's. This is a school project funded by Berea College.
 
 ## Specifications
 The board we are creating is made for an Arduino Pro Mini, and acts as a shield for it. Therefore the legs of the Pro will need to be soldered going up and have the board sit on top of the Arduino. The board is 1.04 inches across by 1.79 inches long. 
