@@ -9501,8 +9501,8 @@ part number 2062-2P from STA</description>
 <part name="RTC" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="POLAR" package3d_urn="urn:adsk.eagle:package:38087/1" value="RTC"/>
 <part name="SW1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE" package3d_urn="urn:adsk.eagle:package:6240957/1"/>
 <part name="BATTERY" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="POLAR" package3d_urn="urn:adsk.eagle:package:38040/1" value="Battery"/>
-<part name="POT1" library="RM_065" deviceset="RM_065" device=""/>
-<part name="POT2" library="RM_065" deviceset="RM_065" device=""/>
+<part name="POT1" library="RM_065" deviceset="RM_065" device="" value=""/>
+<part name="POT2" library="RM_065" deviceset="RM_065" device="" value=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9541,11 +9541,11 @@ part number 2062-2P from STA</description>
 <attribute name="NAME" x="0" y="53.848" size="1.778" layer="95" font="vector"/>
 </instance>
 <instance part="POT1" gate="G$1" x="2.54" y="76.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="-1.27" y="87.249" size="1.778" layer="95"/>
+<attribute name="NAME" x="1.27" y="84.709" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-1.27" y="85.09" size="1.778" layer="96"/>
 </instance>
 <instance part="POT2" gate="G$1" x="27.94" y="76.2" smashed="yes" rot="R270">
-<attribute name="NAME" x="24.13" y="87.249" size="1.778" layer="95"/>
+<attribute name="NAME" x="26.67" y="84.709" size="1.778" layer="95"/>
 <attribute name="VALUE" x="24.13" y="85.09" size="1.778" layer="96"/>
 </instance>
 </instances>
