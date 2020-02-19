@@ -2099,11 +2099,9 @@ design rules under a new name.</description>
 <wire x1="13.208" y1="19.05" x2="14.732" y2="19.05" width="0.508" layer="16"/>
 <wire x1="26.67" y1="36.83" x2="19.05" y2="36.83" width="0.508" layer="16"/>
 <wire x1="19.05" y1="36.83" x2="19.05" y2="38.862" width="0.508" layer="16"/>
-<wire x1="13.208" y1="19.05" x2="13.208" y2="8.89" width="0.508" layer="16"/>
-<wire x1="13.208" y1="8.89" x2="7.62" y2="8.89" width="0.508" layer="16"/>
-<wire x1="13.97" y1="6.604" x2="13.97" y2="8.89" width="0.508" layer="16"/>
-<wire x1="13.97" y1="8.89" x2="13.208" y2="8.89" width="0.508" layer="16"/>
 <wire x1="10.922" y1="46.99" x2="7.62" y2="46.99" width="0" layer="19" extent="16-16"/>
+<wire x1="7.62" y1="8.89" x2="14.732" y2="19.05" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="6.604" x2="7.62" y2="8.89" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="R1" pad="2"/>
@@ -2118,8 +2116,9 @@ design rules under a new name.</description>
 <contactref element="J1" pad="2"/>
 <wire x1="5.334" y1="44.45" x2="7.62" y2="44.45" width="0.508" layer="16"/>
 <wire x1="5.334" y1="11.43" x2="7.62" y2="11.43" width="0.508" layer="16"/>
-<wire x1="5.334" y1="44.45" x2="5.334" y2="11.43" width="0.508" layer="16"/>
+<wire x1="5.334" y1="11.43" x2="5.334" y2="44.45" width="0.508" layer="16"/>
 <contactref element="SW2" pad="P$1"/>
+<wire x1="31.496" y1="4.318" x2="31.496" y2="5.08" width="0.508" layer="16"/>
 <wire x1="30.48" y1="31.75" x2="26.67" y2="31.75" width="0.508" layer="16"/>
 <wire x1="30.48" y1="34.746" x2="30.48" y2="31.75" width="0.508" layer="16"/>
 <wire x1="30.48" y1="34.746" x2="32.004" y2="34.746" width="0.508" layer="16"/>
@@ -2143,13 +2142,9 @@ design rules under a new name.</description>
 <wire x1="16.256" y1="21.4376" x2="16.256" y2="17.526" width="0.508" layer="16"/>
 <wire x1="16.256" y1="17.526" x2="14.732" y2="17.526" width="0.508" layer="16"/>
 <wire x1="14.732" y1="17.526" x2="14.732" y2="14.0716" width="0.508" layer="16"/>
-<wire x1="14.732" y1="14.0716" x2="16.51" y2="14.0716" width="0.508" layer="16"/>
-<wire x1="16.51" y1="14.0716" x2="16.51" y2="6.604" width="0.508" layer="16"/>
-<wire x1="5.334" y1="3.81" x2="16.51" y2="3.81" width="0.508" layer="16"/>
-<wire x1="16.51" y1="6.604" x2="16.51" y2="3.81" width="0.508" layer="16"/>
-<wire x1="5.334" y1="11.43" x2="5.334" y2="3.81" width="0.508" layer="16"/>
-<wire x1="31.496" y1="4.318" x2="31.496" y2="3.81" width="0.508" layer="16"/>
-<wire x1="31.496" y1="3.81" x2="16.51" y2="3.81" width="0.508" layer="16"/>
+<wire x1="16.51" y1="6.604" x2="31.496" y2="5.08" width="0" layer="19" extent="16-16"/>
+<wire x1="14.732" y1="14.0716" x2="16.51" y2="6.604" width="0" layer="19" extent="1-1"/>
+<wire x1="7.62" y1="11.43" x2="14.732" y2="14.0716" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDA">
 <contactref element="ARDUINO" pad="A4"/>
