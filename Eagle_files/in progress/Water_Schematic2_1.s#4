@@ -10414,6 +10414,7 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <part name="POT1" library="RM_065" deviceset="RM_065" device="" value=""/>
 <part name="POT2" library="RM_065" deviceset="RM_065" device="" value=""/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_16" device="" package3d_urn="urn:adsk.eagle:package:38258/1"/>
+<part name="SW2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="SWITCH_PUSHBUTTON" device="EVQ-PE" package3d_urn="urn:adsk.eagle:package:6240957/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -10463,6 +10464,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <attribute name="VALUE" x="-17.78" y="25.654" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="-17.78" y="71.628" size="1.778" layer="95" font="vector"/>
 </instance>
+<instance part="SW2" gate="G$1" x="66.04" y="33.02" smashed="yes">
+<attribute name="NAME" x="63.5" y="36.576" size="1.27" layer="95"/>
+<attribute name="VALUE" x="63.5" y="30.734" size="1.27" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10474,10 +10479,9 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <label x="76.2" y="63.5" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="38.1" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<label x="33.02" y="33.02" size="1.778" layer="95"/>
-<pinref part="TEMP" gate="J$1" pin="2"/>
+<pinref part="POT1" gate="G$1" pin="OUT"/>
+<wire x1="2.54" y1="76.2" x2="7.62" y2="76.2" width="0.1524" layer="91"/>
+<label x="5.08" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SC" class="0">
@@ -10636,6 +10640,11 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <wire x1="-7.62" y1="33.02" x2="-2.54" y2="33.02" width="0.1524" layer="91"/>
 <label x="-7.62" y="33.02" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SW2" gate="G$1" pin="P$1"/>
+<wire x1="60.96" y1="33.02" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
+<label x="58.42" y="33.02" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
@@ -10687,14 +10696,14 @@ This footprint was designed to help hold the alignment of a through-hole compone
 </net>
 <net name="A3" class="0">
 <segment>
+<pinref part="ARDUINO" gate="G$1" pin="A3"/>
+<wire x1="73.66" y1="71.12" x2="78.74" y2="71.12" width="0.1524" layer="91"/>
+<label x="76.2" y="71.12" size="1.778" layer="95"/>
+</segment>
+<segment>
 <wire x1="10.16" y1="63.5" x2="15.24" y2="63.5" width="0.1524" layer="91"/>
 <label x="10.16" y="63.5" size="1.778" layer="95"/>
 <pinref part="LIGHT" gate="J$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="ARDUINO" gate="G$1" pin="A2"/>
-<wire x1="73.66" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
-<label x="73.66" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A6" class="0">
@@ -10704,9 +10713,9 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <label x="76.2" y="45.72" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="POT1" gate="G$1" pin="OUT"/>
-<wire x1="2.54" y1="76.2" x2="7.62" y2="76.2" width="0.1524" layer="91"/>
-<label x="5.08" y="76.2" size="1.778" layer="95"/>
+<pinref part="SW2" gate="G$1" pin="P$2"/>
+<wire x1="71.12" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
+<label x="71.12" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A7" class="0">
@@ -10716,9 +10725,10 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <label x="76.2" y="48.26" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="POT2" gate="G$1" pin="OUT"/>
-<wire x1="27.94" y1="76.2" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
-<label x="30.48" y="76.2" size="1.778" layer="95"/>
+<wire x1="38.1" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<label x="33.02" y="33.02" size="1.778" layer="95"/>
+<pinref part="TEMP" gate="J$1" pin="2"/>
 </segment>
 </net>
 <net name="L1" class="0">
@@ -10841,18 +10851,6 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <label x="45.72" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VEE" class="0">
-<segment>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="-7.62" y1="35.56" x2="-2.54" y2="35.56" width="0.1524" layer="91"/>
-<label x="-7.62" y="35.56" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="ARDUINO" gate="G$1" pin="RST@2"/>
-<wire x1="73.66" y1="76.2" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
-<label x="76.2" y="76.2" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="RS" class="0">
 <segment>
 <pinref part="ARDUINO" gate="G$1" pin="TXO"/>
@@ -10863,6 +10861,37 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <pinref part="J1" gate="G$1" pin="4"/>
 <wire x1="-7.62" y1="38.1" x2="-2.54" y2="38.1" width="0.1524" layer="91"/>
 <label x="-7.62" y="38.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A2" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="A2"/>
+<wire x1="73.66" y1="68.58" x2="78.74" y2="68.58" width="0.1524" layer="91"/>
+<label x="76.2" y="68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="-7.62" y1="35.56" x2="-2.54" y2="35.56" width="0.1524" layer="91"/>
+<label x="-7.62" y="35.56" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="A1" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="A1"/>
+<wire x1="73.66" y1="66.04" x2="78.74" y2="66.04" width="0.1524" layer="91"/>
+<label x="76.2" y="66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="POT2" gate="G$1" pin="OUT"/>
+<wire x1="27.94" y1="76.2" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
+<label x="30.48" y="76.2" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RST" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="RST@2"/>
+<wire x1="73.66" y1="76.2" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
+<label x="76.2" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
