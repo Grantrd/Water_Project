@@ -10694,10 +10694,9 @@ Arduino Pro Mini
 <pinref part="B1" gate="G$1" pin="A3"/>
 </segment>
 <segment>
-<wire x1="38.1" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<label x="33.02" y="33.02" size="1.778" layer="95"/>
-<pinref part="TEMP" gate="J$1" pin="2"/>
+<pinref part="SW2" gate="G$1" pin="P$2"/>
+<wire x1="71.12" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
+<label x="71.12" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A6" class="0">
@@ -10707,9 +10706,9 @@ Arduino Pro Mini
 <pinref part="B1" gate="G$1" pin="A6"/>
 </segment>
 <segment>
-<pinref part="SW2" gate="G$1" pin="P$2"/>
-<wire x1="71.12" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
-<label x="71.12" y="33.02" size="1.778" layer="95"/>
+<wire x1="10.16" y1="63.5" x2="15.24" y2="63.5" width="0.1524" layer="91"/>
+<label x="10.16" y="63.5" size="1.778" layer="95"/>
+<pinref part="LIGHT" gate="J$1" pin="2"/>
 </segment>
 </net>
 <net name="A7" class="0">
@@ -10719,9 +10718,10 @@ Arduino Pro Mini
 <pinref part="B1" gate="G$1" pin="A7"/>
 </segment>
 <segment>
-<wire x1="10.16" y1="63.5" x2="15.24" y2="63.5" width="0.1524" layer="91"/>
-<label x="10.16" y="63.5" size="1.778" layer="95"/>
-<pinref part="LIGHT" gate="J$1" pin="2"/>
+<wire x1="38.1" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<label x="33.02" y="33.02" size="1.778" layer="95"/>
+<pinref part="TEMP" gate="J$1" pin="2"/>
 </segment>
 </net>
 <net name="L1" class="0">
@@ -10863,9 +10863,9 @@ Arduino Pro Mini
 <pinref part="B1" gate="G$1" pin="A2"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="-7.62" y1="35.56" x2="-2.54" y2="35.56" width="0.1524" layer="91"/>
-<label x="-7.62" y="35.56" size="1.778" layer="95"/>
+<pinref part="POT2" gate="G$1" pin="OUT"/>
+<wire x1="27.94" y1="76.2" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
+<label x="30.48" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A1" class="0">
@@ -10875,9 +10875,9 @@ Arduino Pro Mini
 <pinref part="B1" gate="G$1" pin="A1"/>
 </segment>
 <segment>
-<pinref part="POT2" gate="G$1" pin="OUT"/>
-<wire x1="27.94" y1="76.2" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
-<label x="30.48" y="76.2" size="1.778" layer="95"/>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="-7.62" y1="35.56" x2="-2.54" y2="35.56" width="0.1524" layer="91"/>
+<label x="-7.62" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RST" class="0">
